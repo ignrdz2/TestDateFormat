@@ -1,4 +1,6 @@
-﻿namespace Ucu.Poo.TestDateFormat;
+﻿using System.Text.RegularExpressions;
+
+namespace Ucu.Poo.TestDateFormat;
 
 /// <summary>
 /// Esta clase implementa la funcionalidad de cambiar el formato de una fecha.
@@ -16,5 +18,10 @@ public class DateFormatter
     public static string ChangeFormat(string date)
     {
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+    }
+    public bool ValidarFecha(string fecha){
+        string patron = @"^\d{4}-\d{2}-\d{2}$";
+        
+        return Regex.IsMatch(fecha, patron);
     }
 }
