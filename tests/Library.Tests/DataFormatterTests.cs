@@ -19,12 +19,14 @@ public class DateFormatterTests
 
         Assert.IsFalse(esValida);
     }
+    [Test]
     public void Test2(){
         string fecha = "2023-05-12";
         bool esValida = dateFormatter.ValidarFecha(fecha);
 
         Assert.IsTrue(esValida);
     }
+    [Test]
     public void Test3(){
         string fecha = " ";
         bool esValida = dateFormatter.ValidarFecha(fecha);
